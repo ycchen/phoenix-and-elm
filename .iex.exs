@@ -1,1 +1,1 @@
-# alias PhoenixAndElm.Repo.{Post, Comment, Movie)
+alias PhoenixAndElm.{Repo, Contact}

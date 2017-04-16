@@ -21,7 +21,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 
   mix phoenix.new phoenix_and_elm
 
-  cd phoenix_elm_contact
+  cd phoenix_and_elm
 
   mix ecto.create
 
@@ -46,3 +46,38 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   $ mix phoenix.gen.model Contact contacts first_name last_name gender:integer birth_date:date location phone_number email headline:text picture
 
   mix ecto.migrate
+
+
+### seed the contact model
+
+Added faker package for populate Contact model
+
+### use alias in iex
+alias PhoenixAndElm.{Repo, Contact, Seeds}
+
+instead of
+
+	alias PhoenixAndElm.Repo
+	alias PhoenixAndElm.Contact
+	alias PhoenixAndElm.Seeds
+
+## Part 2
+
+### added scrivener_ecto allows you to paginate your Ecto queries with Scrivener.
+
+#### added scrivener_ecto to mix.exs
+
+mix deps.get
+
+modified lib/phoenix_elm_contact/repo.ex for basic configuration for use Scrivener
+
+modified web/router.ex
+
+# web/elm folder
+elm package install elm-lang/http -y
+elm package install elm-community/json-extra -y
+elm package install elm-lang/navigation -y
+elm package install evancz/url-parser -y
+
+# project root folder
+> npm install --save-dev stylus-brunch nib
