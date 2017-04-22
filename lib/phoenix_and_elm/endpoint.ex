@@ -36,7 +36,7 @@ defmodule PhoenixAndElm.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_and_elm_key",
-    signing_salt: "LDMa1ACK"
+    signing_salt: "OgVD5hnA"
 
   plug PhoenixAndElm.Router
 end

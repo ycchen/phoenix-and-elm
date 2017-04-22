@@ -4,7 +4,7 @@ defmodule PhoenixAndElm.Mixfile do
   def project do
     [app: :phoenix_and_elm,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -38,7 +38,7 @@ defmodule PhoenixAndElm.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:faker, "~> 0.7"},
+     {:faker, git: "https://github.com/bigardone/faker", branch: "master"},
      {:scrivener_ecto, "~> 1.0"}]
   end
 

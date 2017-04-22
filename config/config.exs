@@ -12,7 +12,7 @@ config :phoenix_and_elm,
 # Configures the endpoint
 config :phoenix_and_elm, PhoenixAndElm.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "8ms3/QfDLdz6XAAaJHVSbVYt20pTM2jgpLaeXfFyeW2z9Shbk36LnzhFl0mjTwv0",
+  secret_key_base: "baoYW6OO9jbiR6e2tXURKD5ZqGyFiDThb03xFgbzyOrcp4s9ZDjkeSkb9pNJQhzq",
   render_errors: [view: PhoenixAndElm.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PhoenixAndElm.PubSub,
            adapter: Phoenix.PubSub.PG2]
