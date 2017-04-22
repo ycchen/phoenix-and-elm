@@ -1,3 +1,45 @@
+var _user$project$ContactList_View$paginationLink = F2(
+	function (currentPage, page) {
+		var classes = _elm_lang$html$Html_Attributes$classList(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'active',
+					_1: _elm_lang$core$Native_Utils.eq(currentPage, page)
+				},
+				_1: {ctor: '[]'}
+			});
+		return A2(
+			_elm_lang$html$Html$li,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$a,
+					{
+						ctor: '::',
+						_0: classes,
+						_1: {ctor: '[]'}
+					},
+					{ctor: '[]'}),
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$ContactList_View$paginationList = F2(
+	function (totalPages, pageNumber) {
+		return A2(
+			_elm_lang$html$Html$ul,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('pagination'),
+				_1: {ctor: '[]'}
+			},
+			A2(
+				_elm_lang$core$List$map,
+				_user$project$ContactList_View$paginationLink(pageNumber),
+				A2(_elm_lang$core$List$range, 1, totalPages)));
+	});
 var _user$project$ContactList_View$contactsList = function (model) {
 	if (_elm_lang$core$Native_Utils.cmp(model.contactList.total_entries, 0) > 0) {
 		return A2(
@@ -68,14 +110,22 @@ var _user$project$ContactList_View$indexView = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{ctor: '[]'},
-				{
+			_0: A2(_user$project$ContactList_View$paginationList, model.contactList.total_pages, model.contactList.page_number),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _user$project$ContactList_View$contactsList(model),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
 					ctor: '::',
-					_0: _user$project$ContactList_View$contactsList(model),
+					_0: A2(_user$project$ContactList_View$paginationList, model.contactList.total_pages, model.contactList.page_number),
 					_1: {ctor: '[]'}
-				}),
-			_1: {ctor: '[]'}
+				}
+			}
 		});
 };
