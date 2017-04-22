@@ -1,6 +1,7 @@
 module ContactList.View exposing (indexView)
 
 import Contact.View exposing (contactView)
+import Html.Events exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Messages exposing (..)
@@ -56,6 +57,7 @@ paginationLink currentPage page =
         li
             []
             [ a
-                [ classes ]
+                [ classes
+                , onClick <| Paginate page ]
                 []
             ]

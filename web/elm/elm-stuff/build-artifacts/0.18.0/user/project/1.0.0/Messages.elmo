@@ -1,3 +1,6 @@
+var _user$project$Messages$Paginate = function (a) {
+	return {ctor: 'Paginate', _0: a};
+};
 var _user$project$Messages$FetchResult = function (a) {
 	return {ctor: 'FetchResult', _0: a};
 };
